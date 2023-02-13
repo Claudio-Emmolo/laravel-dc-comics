@@ -24,7 +24,7 @@
                 <td>{{ $comic->series }}</td>
                 <td>{{ $comic->type }}</td>
                 <td>
-                    <a href=" {{route('comic-show', $comic->id)}} " class="btn btn-success">View</a>
+                    <a href=" {{route('comic.show', $comic->id)}} " class="btn btn-success">View</a>
                 </td>
             </tr>
             @empty
