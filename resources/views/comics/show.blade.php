@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', "DC - $singleComic->title")
+@section('title', "DC - $comic->title")
 
 
 @section('main-app')
@@ -12,16 +12,16 @@
                 <a href=" {{route('comic.index')}} " class="btn btn-dark">Go Back</a>
             </div>
 
-            <img src="{{$singleComic->thumb}}" alt="{{ $singleComic->title }} Cover">
-            <h1 class="fw-bold my-3">{{ $singleComic->title }}</h1>
+            <img src="{{$comic->thumb}}" alt="{{ $comic->title }} Cover">
+            <h1 class="fw-bold my-3">{{ $comic->title }}</h1>
             <p class="text-start">
-                {{ $singleComic->description }}
+                {{ $comic->description }}
             </p>
             <p class="text-start">
-                Prezzo:      <span class="fw-bold">{{ $singleComic->price }}    </span>    <br>
-                Serie:       <span class="fw-bold">{{ $singleComic->series }}   </span>    <br>
-                Tipo:        <span class="fw-bold">{{ $singleComic->type }}     </span>    <br>
-                Data Uscita: <span class="fw-bold">{{ $singleComic->sale_date }}</span>
+                Prezzo:      <span class="fw-bold">{{ $comic->price }}    </span>    <br>
+                Serie:       <span class="fw-bold">{{ $comic->series }}   </span>    <br>
+                Tipo:        <span class="fw-bold">{{ $comic->type }}     </span>    <br>
+                Data Uscita: <span class="fw-bold">{{ $comic->sale_date }}</span>
             </p>
             <div class="admin-button">
                 <a href="#" class="btn btn-info">Edit</a>
