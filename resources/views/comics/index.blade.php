@@ -29,7 +29,7 @@
                 </td>
             </tr>
             @empty
-                
+                <p>Nessun fumetto da mostrare</p>
             @endforelse
         </tbody>
       </table>
