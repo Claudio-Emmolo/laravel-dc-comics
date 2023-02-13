@@ -13,6 +13,8 @@
 
     </head>
     <body>
+        @include('partials.header')
+
         @yield('main-app')
     </body>
 </html>
