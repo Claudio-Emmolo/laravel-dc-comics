@@ -2,16 +2,29 @@
 
 @section('main-app')
 <main>
-    <img src="{{$singleComic->thumb}}" alt="">
-    <h1>{{ $singleComic->title }}</h1>
-    <p>
-        {{ $singleComic->description }}
-    </p>
-   <p>
-       Prezzo: {{ $singleComic->price }} <br>
-       Serie: {{ $singleComic->series }}<br>
-       Tipo: {{ $singleComic->type }}<br>
-       Data Uscita: {{ $singleComic->sale_date }}
-    </p>
+    <div class="container d-flex vh-100">
+
+        <div class="single-comic m-auto text-center border border-5 border-dark p-3 position-relative">
+            <div class="back position-absolute top-5 start-5">
+                <a href=" {{route('comic-index')}} " class="btn btn-dark">Go Back</a>
+            </div>
+
+            <img src="{{$singleComic->thumb}}" alt="{{ $singleComic->title }} Cover">
+            <h1 class="fw-bold my-3">{{ $singleComic->title }}</h1>
+            <p class="text-start">
+                {{ $singleComic->description }}
+            </p>
+            <p class="text-start">
+                Prezzo:      <span class="fw-bold">{{ $singleComic->price }}    </span>    <br>
+                Serie:       <span class="fw-bold">{{ $singleComic->series }}   </span>    <br>
+                Tipo:        <span class="fw-bold">{{ $singleComic->type }}     </span>    <br>
+                Data Uscita: <span class="fw-bold">{{ $singleComic->sale_date }}</span>
+            </p>
+            <div class="admin-button">
+                <a href="#" class="btn btn-danger">Delete</a>
+                <a href="#" class="btn btn-info">Edit</a>
+            </div>
+        </div>
+    </div>
 </main>
 @endsection
