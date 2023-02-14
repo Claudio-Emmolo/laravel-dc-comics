@@ -4,6 +4,9 @@
 
 @section('main-app')
 <main>
+  <div class="btn-create d-flex">
+    <a href=" {{route('comic.create')}} " class="btn btn-primary mb-3 mx-auto">Create</a>
+  </div>
     <table class="table table-hover">
         <thead>
           <tr>
