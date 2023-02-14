@@ -13,4 +13,9 @@ class PageController extends Controller
         $comicList = Comic::all();
         return view('user.homepage', compact('comicList'));
     }
+
+    public function show(Comic $comic)
+    {
+        return view('user.show', compact('comic'));
+    }
 }

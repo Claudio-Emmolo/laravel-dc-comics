@@ -27,3 +27,4 @@ Route::prefix('admin')->name('admin.')->group(function () {
 });
 
 Route::get('user/homepage', [UserPageController::class, "homepage"])->name('user.homepage');
+Route::get('user/show/{comic}', [UserPageController::class, "show"])->name('user.show');
