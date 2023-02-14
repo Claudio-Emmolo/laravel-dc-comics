@@ -4,10 +4,31 @@ header {
     height: 90px;
 }
 
+header.user-header {
+    height: 120px;
+    border-bottom: 2px solid #3d58ca;
+
+    img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
 div.single-comic {
     height: calc(100vh - 100px);
 }
 
 div.home-height {
     height: calc(100vh - 100px);
+}
+
+div.comic-card {
+    width: 300px;
+    border: 2px solid #3d58ca;
+    padding: 10px 0;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.1);
+    }
 }
