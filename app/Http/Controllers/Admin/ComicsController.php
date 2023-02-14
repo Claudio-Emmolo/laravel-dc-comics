@@ -16,7 +16,7 @@ class ComicsController extends Controller
     public function index()
     {
         $comicList = Comic::all();
-        return view('comics.index', compact('comicList'));
+        return view('admin.comics.index', compact('comicList'));
     }
 
     /**
@@ -26,7 +26,7 @@ class ComicsController extends Controller
      */
     public function create()
     {
-        return view('comics.create');
+        return view('admin.comics.create');
     }
 
     /**
@@ -49,7 +49,7 @@ class ComicsController extends Controller
         // $newComic->type = $userData['type'];
         $newComic->save();
 
-        return redirect()->route('comic.show', $newComic->id);
+        return redirect()->route('admin.comic.show', $newComic->id);
     }
 
     /**
@@ -60,7 +60,7 @@ class ComicsController extends Controller
      */
     public function show(Comic $comic)
     {
-        return view('comics.show', compact('comic'));
+        return view('admin.comics.show', compact('comic'));
     }
 
     /**

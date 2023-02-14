@@ -9,7 +9,7 @@
 
         <div class="comic m-auto text-center border border-5 border-dark p-3 position-relative">
             <div class="back position-absolute top-5 start-5">
-                <a href=" {{route('comic.index')}} " class="btn btn-dark">Go Back</a>
+                <a href=" {{route('admin.comic.index')}} " class="btn btn-dark">Go Back</a>
             </div>
 
             <img src="{{$comic->thumb}}" alt="{{ $comic->title }} Cover">

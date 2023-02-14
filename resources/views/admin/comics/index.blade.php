@@ -5,7 +5,7 @@
 @section('main-app')
 <main>
   <div class="btn-create d-flex">
-    <a href=" {{route('comic.create')}} " class="btn btn-primary mb-3 mx-auto">Create</a>
+    <a href=" {{route('admin.comic.create')}} " class="btn btn-primary mb-3 mx-auto">Create</a>
   </div>
     <table class="table table-hover">
         <thead>
@@ -27,7 +27,7 @@
                 <td>{{ $comic->series }}</td>
                 <td>{{ $comic->type }}</td>
                 <td>
-                    <a href=" {{route('comic.show', $comic->id)}} " class="btn btn-success">View</a>
+                    <a href=" {{route('admin.comic.show', $comic->id)}} " class="btn btn-success">View</a>
                 </td>
             </tr>
             @empty
