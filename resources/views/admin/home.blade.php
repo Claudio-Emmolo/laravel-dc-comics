@@ -5,8 +5,8 @@
 
 @section('main-app')
 <main>
-    <div class="container">
-        <h1>Benvenuto nel pannello di gestione</h1>
+    <div class="container home-height d-flex">
+        <h1 class="m-auto fw-bold text-uppercase">Benvenuto nel pannello di gestione</h1>
     </div>
 </main>
 @endsection
