@@ -39,13 +39,14 @@ class ComicsController extends Controller
     {
         $userData = $request->all();
         $newComic = new Comic();
-        $newComic->title = $userData['title'];
-        $newComic->description = $userData['description'];
-        $newComic->thumb = $userData['thumb'];
-        $newComic->price = $userData['price'];
-        $newComic->series = $userData['series'];
-        $newComic->sale_date = $userData['sale_date'];
-        $newComic->type = $userData['type'];
+        $newComic->fill($userData);
+        // $newComic->title = $userData['title'];
+        // $newComic->description = $userData['description'];
+        // $newComic->thumb = $userData['thumb'];
+        // $newComic->price = $userData['price'];
+        // $newComic->series = $userData['series'];
+        // $newComic->sale_date = $userData['sale_date'];
+        // $newComic->type = $userData['type'];
         $newComic->save();
     }
 
