@@ -6,7 +6,8 @@
 <main>
     <h2 class="text-center mb-2">Create New Comic</h2>
     <div class="container">
-        <form method="POST">
+        <form action="{{ route('comic.store') }}" method="POST">
+            @csrf
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
                 <input type="text" class="form-control" id="title" name="title">
