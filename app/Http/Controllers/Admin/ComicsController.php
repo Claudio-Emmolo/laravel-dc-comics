@@ -88,7 +88,7 @@ class ComicsController extends Controller
         $comic = Comic::findOrFail($id);
         $comic->update($data);
 
-        return redirect()->route('admin.comic.index', compact('comic'));
+        return redirect()->route('admin.comic.index', compact('comic'))->with('message', "Elemento Modificato ($comic->title) ")->with('typeMessage', 'alert-success');
     }
 
     /**
@@ -101,6 +101,6 @@ class ComicsController extends Controller
     {
         $comic->delete();
 
-        return redirect()->route('admin.comic.index');
+        return redirect()->route('admin.comic.index')->with('message', 'Elemento Eliminato')->with('typeMessage', 'alert-danger');
     }
 }

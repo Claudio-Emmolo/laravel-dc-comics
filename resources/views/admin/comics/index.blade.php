@@ -7,6 +7,13 @@
   <div class="btn-create d-flex">
     <a href=" {{route('admin.comic.create')}} " class="btn btn-primary mb-3 mx-auto">Create</a>
   </div>
+
+  @if (session('message'))
+  <div class="alert {{session('typeMessage')}}">
+    {{session('message')}}
+  </div>
+  @endif
+
     <table class="table table-hover">
         <thead>
           <tr>
