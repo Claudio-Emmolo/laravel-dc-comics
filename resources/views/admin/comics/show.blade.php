@@ -24,7 +24,7 @@
                 Data Uscita: <span class="fw-bold">{{ $comic->sale_date }}</span>
             </p>
             <div class="admin-button">
-                <a href="#" class="btn btn-info">Edit</a>
+                <a href="{{ route('admin.comic.edit', $comic->id) }}" class="btn btn-info">Edit</a>
                 <a href="#" class="btn btn-danger">Delete</a>
             </div>
         </div>
