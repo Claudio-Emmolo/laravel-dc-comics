@@ -28,6 +28,7 @@
                 <td>{{ $comic->type }}</td>
                 <td>
                     <a href=" {{route('admin.comic.show', $comic->id)}} " class="btn btn-success">View</a>
+                    <a href="{{route('admin.comic.edit', $comic->id)}}" class="btn btn-info">Edit</a>
                 </td>
             </tr>
             @empty
