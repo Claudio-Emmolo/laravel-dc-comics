@@ -25,9 +25,16 @@
             </p>
             <div class="admin-button">
                 <a href="{{ route('admin.comic.edit', $comic->id) }}" class="btn btn-info">Edit</a>
-                <a href="#" class="btn btn-danger">Delete</a>
+                <form class="delete d-inline" action="{{route('admin.comic.destroy', $comic->id)}}" method="POST">
+                    <button class="btn btn-danger">Delete</button>
+                    @csrf
+                    @method('DELETE')
+                  </form>
             </div>
         </div>
     </div>
+
+    @vite('resources/js/deletePopUp.js')
+
 </main>
 @endsection
