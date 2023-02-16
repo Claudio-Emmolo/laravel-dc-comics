@@ -8,7 +8,7 @@
 
     <div class="container">
         {{-- Import Form --}}
-        @include('admin.comics.partials.form', ["route" => 'admin.comic.store', 'methodRoute' => 'POST'])
+        @include('admin.comics.partials.form', ["route" => 'admin.comic.store', 'isCreateForm'=>'create-form', 'methodRoute' => 'POST'])
 
     </div>
 </main>

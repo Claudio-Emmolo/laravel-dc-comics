@@ -10,7 +10,7 @@
     </div>
 @endif
 
-<form action="{{ route($route, $comic->id) }}" method="POST">
+<form action="{{ route($route, $comic->id) }}" id="{{$isCreateForm}}" method="POST">
     @csrf
     @method($methodRoute)
     
@@ -45,3 +45,5 @@
 
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+@vite('resources/js/createComicPopUp.js')
