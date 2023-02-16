@@ -40,15 +40,26 @@ class ComicsController extends Controller
     {
         $userData = $request->all();
 
-        $request->validate([
-            'title' => 'required|string|min:1|max:150',
-            'description' => 'required|min:10',
-            'thumb' => 'required|url|min:5',
-            'price' => 'required|numeric',
-            'series' => 'required|string|min:1|max:50',
-            'sale_date' => 'required|date',
-            'type' => 'required|string|min:1|max:50',
-        ]);
+        $request->validate(
+            [
+                'title' => 'required|string|min:1|max:150',
+                'description' => 'required|min:10',
+                'thumb' => 'required|url|min:5',
+                'price' => 'required|numeric',
+                'series' => 'required|string|min:1|max:50',
+                'sale_date' => 'required|date',
+                'type' => 'required|string|min:1|max:50',
+            ],
+            [
+                'title.required' => 'Il TITOLO deve contenere almeno 2 caratteri',
+                'description.required' => 'La DESCRIZIONE deve contenere almeno 10 caratteri',
+                'thumb.required' => 'La THUMB deve essere un link di almeno 5 caratteri',
+                'price.required' => 'Inserisci un PREZZO corretto',
+                'series.required' => 'La SERIE deve contenere almeno 2 caratteri',
+                'sale_date.required' => 'Inserisci una DATA esatta',
+                'type.required' => 'Il TIPO deve contenere almeno 2 caratteri'
+            ]
+        );
 
         $newComic = new Comic();
         $newComic->fill($userData);
@@ -97,15 +108,25 @@ class ComicsController extends Controller
     {
         $data = $request->all();
 
-        $request->validate([
-            'title' => 'required|string|min:1|max:150',
-            'description' => 'required|min:10',
-            'thumb' => 'required|url|min:5',
-            'price' => 'required|numeric',
-            'series' => 'required|string|min:1|max:50',
-            'sale_date' => 'required|date',
-            'type' => 'required|string|min:1|max:50',
-        ]);
+        $request->validate(
+            [
+                'title' => 'required|string|min:2|max:150',
+                'description' => 'required|min:10',
+                'thumb' => 'required|url|min:5',
+                'price' => 'required|numeric',
+                'series' => 'required|string|min:2|max:50',
+                'sale_date' => 'required|date',
+                'type' => 'required|string|min:2|max:50',
+            ],
+            [
+                'title.required' => 'Il TITLO deve contenere almeno 2 caratteri',
+                'description.required' => 'La DESCRIZIONE deve contenere almeno 10 caratteri',
+                'thumb.required' => 'La THUMB deve essere un link di almeno 5 caratteri',
+                'series.required' => 'La SERIE deve contenere almeno 2 caratteri',
+                'sale_date.required' => 'Inserisci una data esatta',
+                'type.required' => 'Il TIPO deve contenere almeno 2 caratteri'
+            ]
+        );
 
         $comic = Comic::findOrFail($id);
         $comic->update($data);
