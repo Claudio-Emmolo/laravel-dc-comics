@@ -47,7 +47,7 @@ class ComicsController extends Controller
                 'thumb' => 'required|url|min:5',
                 'price' => 'required|numeric',
                 'series' => 'required|string|min:2|max:50',
-                'sale_date' => 'required|date',
+                'sale_date' => 'nullable|date',
                 'type' => 'required|string|min:2|max:50',
             ],
 
@@ -70,7 +70,7 @@ class ComicsController extends Controller
                 'series.min' => 'La SERIE deve contenere almeno 2 caratteri',
                 'series.max' => 'Nella SERIE hai superato il numero massimo di caratteri',
 
-                'sale_date.required' => 'Inserisci una DATA esatta',
+                'sale_date.date' => 'Inserisci una DATA esatta',
 
                 'type.required' => 'Inserisci un TIPO',
                 'type.min' => 'Il TIPO deve contenere almeno 2 caratteri',
@@ -132,7 +132,7 @@ class ComicsController extends Controller
                 'thumb' => 'required|url|min:5',
                 'price' => 'required|numeric',
                 'series' => 'required|string|min:2|max:50',
-                'sale_date' => 'required|date',
+                'sale_date' => 'nullable|date',
                 'type' => 'required|string|min:2|max:50',
             ],
             [
@@ -154,7 +154,7 @@ class ComicsController extends Controller
                 'series.min' => 'La SERIE deve contenere almeno 2 caratteri',
                 'series.max' => 'Nella SERIE hai superato il numero massimo di caratteri',
 
-                'sale_date.required' => 'Inserisci una DATA esatta',
+                'sale_date.date' => 'Inserisci una DATA esatta',
 
                 'type.required' => 'Inserisci un TIPO',
                 'type.min' => 'Il TIPO deve contenere almeno 2 caratteri',
