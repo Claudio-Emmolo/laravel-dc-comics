@@ -42,22 +42,37 @@ class ComicsController extends Controller
 
         $request->validate(
             [
-                'title' => 'required|string|min:1|max:150',
+                'title' => 'required|string|min:2|max:150',
                 'description' => 'required|min:10',
                 'thumb' => 'required|url|min:5',
                 'price' => 'required|numeric',
-                'series' => 'required|string|min:1|max:50',
+                'series' => 'required|string|min:2|max:50',
                 'sale_date' => 'required|date',
-                'type' => 'required|string|min:1|max:50',
+                'type' => 'required|string|min:2|max:50',
             ],
             [
-                'title.required' => 'Il TITOLO deve contenere almeno 2 caratteri',
-                'description.required' => 'La DESCRIZIONE deve contenere almeno 10 caratteri',
-                'thumb.required' => 'La THUMB deve essere un link di almeno 5 caratteri',
+                'title.required' => 'Inserisci un TITOLO ',
+                'title.min' => 'Il TITOLO deve contenere almeno 2 caratteri',
+                'title.max' => 'Nel TITOLO hai superato il numero massimo di caratteri',
+
+                'description.required' => 'Inserisci una DESCRIZIONE',
+                'description.min' => 'La DESCRIZIONE deve contenere almeno 10 caratteri',
+                'description.max' => 'Nella DESCRIZIONE hai superato il numero massimo di caratteri',
+
+                'thumb.required' => 'Inserisci una URL valido nella THUMB deve essere un link di almeno 5 caratteri',
+                'thumb.min' => 'La THUMB deve contenere almeno 5 caratteri',
+
                 'price.required' => 'Inserisci un PREZZO corretto',
-                'series.required' => 'La SERIE deve contenere almeno 2 caratteri',
+
+                'series.required' => 'Inserisci una SERIE',
+                'series.min' => 'La SERIE deve contenere almeno 2 caratteri',
+                'series.max' => 'Nella SERIE hai superato il numero massimo di caratteri',
+
                 'sale_date.required' => 'Inserisci una DATA esatta',
-                'type.required' => 'Il TIPO deve contenere almeno 2 caratteri'
+
+                'type.required' => 'Inserisci un TIPO',
+                'type.min' => 'Il TIPO deve contenere almeno 2 caratteri',
+                'type.max' => 'Nel TIPO hai superato il numero massimo di caratteri',
             ]
         );
 
@@ -119,12 +134,29 @@ class ComicsController extends Controller
                 'type' => 'required|string|min:2|max:50',
             ],
             [
-                'title.required' => 'Il TITLO deve contenere almeno 2 caratteri',
-                'description.required' => 'La DESCRIZIONE deve contenere almeno 10 caratteri',
-                'thumb.required' => 'La THUMB deve essere un link di almeno 5 caratteri',
-                'series.required' => 'La SERIE deve contenere almeno 2 caratteri',
-                'sale_date.required' => 'Inserisci una data esatta',
-                'type.required' => 'Il TIPO deve contenere almeno 2 caratteri'
+                'title.required' => 'Inserisci un TITOLO ',
+                'title.min' => 'Il TITOLO deve contenere almeno 2 caratteri',
+                'title.max' => 'Nel TITOLO hai superato il numero massimo di caratteri',
+
+                'description.required' => 'Inserisci una DESCRIZIONE',
+                'description.min' => 'La DESCRIZIONE deve contenere almeno 10 caratteri',
+                'description.max' => 'Nella DESCRIZIONE hai superato il numero massimo di caratteri',
+
+                'thumb.required' => 'Inserisci un link nella THUMB',
+                'thumb.url' => 'Inserisci una URL valido nella THUMB',
+                'thumb.min' => 'La THUMB deve contenere almeno 5 caratteri',
+
+                'price.required' => 'Inserisci un PREZZO corretto',
+
+                'series.required' => 'Inserisci una SERIE',
+                'series.min' => 'La SERIE deve contenere almeno 2 caratteri',
+                'series.max' => 'Nella SERIE hai superato il numero massimo di caratteri',
+
+                'sale_date.required' => 'Inserisci una DATA esatta',
+
+                'type.required' => 'Inserisci un TIPO',
+                'type.min' => 'Il TIPO deve contenere almeno 2 caratteri',
+                'type.max' => 'Nel TIPO hai superato il numero massimo di caratteri',
             ]
         );
 
