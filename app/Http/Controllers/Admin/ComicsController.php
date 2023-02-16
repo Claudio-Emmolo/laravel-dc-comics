@@ -50,6 +50,7 @@ class ComicsController extends Controller
                 'sale_date' => 'required|date',
                 'type' => 'required|string|min:2|max:50',
             ],
+
             [
                 'title.required' => 'Inserisci un TITOLO ',
                 'title.min' => 'Il TITOLO deve contenere almeno 2 caratteri',
@@ -59,7 +60,8 @@ class ComicsController extends Controller
                 'description.min' => 'La DESCRIZIONE deve contenere almeno 10 caratteri',
                 'description.max' => 'Nella DESCRIZIONE hai superato il numero massimo di caratteri',
 
-                'thumb.required' => 'Inserisci una URL valido nella THUMB deve essere un link di almeno 5 caratteri',
+                'thumb.required' => 'Inserisci un link nella THUMB',
+                'thumb.url' => 'Inserisci una URL valido nella THUMB',
                 'thumb.min' => 'La THUMB deve contenere almeno 5 caratteri',
 
                 'price.required' => 'Inserisci un PREZZO corretto',
