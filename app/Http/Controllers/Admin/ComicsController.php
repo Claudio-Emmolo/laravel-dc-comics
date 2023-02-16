@@ -8,6 +8,45 @@ use Illuminate\Http\Request;
 
 class ComicsController extends Controller
 {
+
+    public $validator =
+    [
+        'title' => 'required|string|min:2|max:150',
+        'description' => 'required|min:10',
+        'thumb' => 'required|url|min:5',
+        'price' => 'required|numeric',
+        'series' => 'required|string|min:2|max:50',
+        'sale_date' => 'nullable|date',
+        'type' => 'required|string|min:2|max:50',
+    ];
+
+    public $errorMessage = [
+        'title.required' => 'Inserisci un TITOLO ',
+        'title.min' => 'Il TITOLO deve contenere almeno 2 caratteri',
+        'title.max' => 'Nel TITOLO hai superato il numero massimo di caratteri',
+
+        'description.required' => 'Inserisci una DESCRIZIONE',
+        'description.min' => 'La DESCRIZIONE deve contenere almeno 10 caratteri',
+        'description.max' => 'Nella DESCRIZIONE hai superato il numero massimo di caratteri',
+
+        'thumb.required' => 'Inserisci un link nella THUMB',
+        'thumb.url' => 'Inserisci una URL valido nella THUMB',
+        'thumb.min' => 'La THUMB deve contenere almeno 5 caratteri',
+
+        'price.required' => 'Inserisci un PREZZO corretto',
+
+        'series.required' => 'Inserisci una SERIE',
+        'series.min' => 'La SERIE deve contenere almeno 2 caratteri',
+        'series.max' => 'Nella SERIE hai superato il numero massimo di caratteri',
+
+        'sale_date.date' => 'Inserisci una DATA esatta',
+
+        'type.required' => 'Inserisci un TIPO',
+        'type.min' => 'Il TIPO deve contenere almeno 2 caratteri',
+        'type.max' => 'Nel TIPO hai superato il numero massimo di caratteri',
+    ];
+
+
     /**
      * Display a listing of the resource.
      *
@@ -41,41 +80,8 @@ class ComicsController extends Controller
         $userData = $request->all();
 
         $request->validate(
-            [
-                'title' => 'required|string|min:2|max:150',
-                'description' => 'required|min:10',
-                'thumb' => 'required|url|min:5',
-                'price' => 'required|numeric',
-                'series' => 'required|string|min:2|max:50',
-                'sale_date' => 'nullable|date',
-                'type' => 'required|string|min:2|max:50',
-            ],
-
-            [
-                'title.required' => 'Inserisci un TITOLO ',
-                'title.min' => 'Il TITOLO deve contenere almeno 2 caratteri',
-                'title.max' => 'Nel TITOLO hai superato il numero massimo di caratteri',
-
-                'description.required' => 'Inserisci una DESCRIZIONE',
-                'description.min' => 'La DESCRIZIONE deve contenere almeno 10 caratteri',
-                'description.max' => 'Nella DESCRIZIONE hai superato il numero massimo di caratteri',
-
-                'thumb.required' => 'Inserisci un link nella THUMB',
-                'thumb.url' => 'Inserisci una URL valido nella THUMB',
-                'thumb.min' => 'La THUMB deve contenere almeno 5 caratteri',
-
-                'price.required' => 'Inserisci un PREZZO corretto',
-
-                'series.required' => 'Inserisci una SERIE',
-                'series.min' => 'La SERIE deve contenere almeno 2 caratteri',
-                'series.max' => 'Nella SERIE hai superato il numero massimo di caratteri',
-
-                'sale_date.date' => 'Inserisci una DATA esatta',
-
-                'type.required' => 'Inserisci un TIPO',
-                'type.min' => 'Il TIPO deve contenere almeno 2 caratteri',
-                'type.max' => 'Nel TIPO hai superato il numero massimo di caratteri',
-            ]
+            $this->validator,
+            $this->errorMessage
         );
 
         $newComic = new Comic();
@@ -126,40 +132,8 @@ class ComicsController extends Controller
         $data = $request->all();
 
         $request->validate(
-            [
-                'title' => 'required|string|min:2|max:150',
-                'description' => 'required|min:10',
-                'thumb' => 'required|url|min:5',
-                'price' => 'required|numeric',
-                'series' => 'required|string|min:2|max:50',
-                'sale_date' => 'nullable|date',
-                'type' => 'required|string|min:2|max:50',
-            ],
-            [
-                'title.required' => 'Inserisci un TITOLO ',
-                'title.min' => 'Il TITOLO deve contenere almeno 2 caratteri',
-                'title.max' => 'Nel TITOLO hai superato il numero massimo di caratteri',
-
-                'description.required' => 'Inserisci una DESCRIZIONE',
-                'description.min' => 'La DESCRIZIONE deve contenere almeno 10 caratteri',
-                'description.max' => 'Nella DESCRIZIONE hai superato il numero massimo di caratteri',
-
-                'thumb.required' => 'Inserisci un link nella THUMB',
-                'thumb.url' => 'Inserisci una URL valido nella THUMB',
-                'thumb.min' => 'La THUMB deve contenere almeno 5 caratteri',
-
-                'price.required' => 'Inserisci un PREZZO corretto',
-
-                'series.required' => 'Inserisci una SERIE',
-                'series.min' => 'La SERIE deve contenere almeno 2 caratteri',
-                'series.max' => 'Nella SERIE hai superato il numero massimo di caratteri',
-
-                'sale_date.date' => 'Inserisci una DATA esatta',
-
-                'type.required' => 'Inserisci un TIPO',
-                'type.min' => 'Il TIPO deve contenere almeno 2 caratteri',
-                'type.max' => 'Nel TIPO hai superato il numero massimo di caratteri',
-            ]
+            $this->validator,
+            $this->errorMessage
         );
 
         $comic = Comic::findOrFail($id);
