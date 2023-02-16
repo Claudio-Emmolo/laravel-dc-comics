@@ -43,7 +43,9 @@
         <input type="text" class="form-control" id="type" name="type" value="{{  old('type') ?? $comic->type}}">
     </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="{{ route('admin.comic.index')}}" class="btn btn-dark">Go Back</a>
+    <button type="submit" class="btn btn-primary {{$btnClass}}">Submit</button>
 </form>
 
 @vite('resources/js/createComicPopUp.js')
+@vite('resources/js/hiddenUpdateBtn.js')
