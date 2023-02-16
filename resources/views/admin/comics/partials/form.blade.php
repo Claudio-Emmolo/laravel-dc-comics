@@ -1,8 +1,11 @@
+@foreach ($errors->all() as $error)
+    @dump($error)
+@endforeach
+
 <form action="{{ route($route, $comic->id) }}" method="POST">
     @csrf
     @method($methodRoute)
-
-
+    
     <div class="mb-3">
         <label for="title" class="form-label">Title</label>
         <input type="text" class="form-control" id="title" name="title" value="{{$comic->title}}">
